@@ -34,7 +34,7 @@ router.post('/login', (req, res, next) => {
     })
 
     // Aqui, salvamos a assinatura direto no Cookie, pela simplicidade
-    res.cookie('token', token, { httpOnly: true, secure: false });
+    res.cookie('token', token, { httpOnly: true, secure: true });
     // Redirecionamos pra rota com proteção...
     res.redirect('/user');
   }
