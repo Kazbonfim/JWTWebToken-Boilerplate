@@ -9,7 +9,8 @@ form.addEventListener('submit', function (event) {
     const password = document.getElementById('inputPassword2').value;
 
     // Fazendo a requisição para o backend (login)
-    fetch('https://jsonwtk.vercel.app/login', {
+    // Ajustado para o Vercel :P
+    fetch('/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
