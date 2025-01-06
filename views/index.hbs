@@ -12,52 +12,9 @@
 <body>
 
     <div class="container my-5">
-        <div class="bg-light p-4 rounded shadow-sm">
-            <p class="lead">Por não termos tutoriais tão claros na internet, sobre como utilizar dados vindos como
-                resposta
-                JSON, decidi criar esse Boilerplate, simples, mas eficaz...</p>
-            <p>Em resumo. Faça o login, usando qualquer dado que tiver, e verá a resposta - um JSON crú na tela, sem
-                mais.
-                Uma coisa que estava tendo muitas dúvidas era:</p>
-            <blockquote class="blockquote">
-                <p class="mb-0"><strong><q>Tá, e agora?! Eu pego esse Token, e jogo onde?!</q></strong></p>
-            </blockquote>
-            <p>Depois que ver tudo acontecendo, preencha o OUTRO formulário, e veja como ele funciona (use seu console,
-                pra
-                entender).</p>
+        <div class="bg-light rounded shadow-sm">
+            <p>Um exemplo prático de como utilizar a ferramenta JWT para assinar Tokens, e dar mais segurança para aplicações mais simples; neste cenário, usamos uma aplicação simples, que armazena os dados nos Cookies do navegador. Não é a melhor das abordagens, no entanto, é a mais simples para se entender alguns conceitos. Você pode conferir os arquivos, e até recomendo que o faça: /routes/index.js é onde estão nossas rotas; /middleware/authFunction.js é responsável por servir como middleware de segurança, ele pode ser utilizado nas rotas que devem ser protegidas; /public/javascript/login.js é o responsável por lidar com a comunicação do front com o back-end (á grosso modo).</p>
         </div>
-    </div>
-
-    <hr>
-
-    {{!-- Formulário 1: só retorna o JSON na tela --}}
-    <div class="container border border-dark-subtle rounded p-4 bg-dark-subtle">
-        <form action="/login" method="post">
-            <!-- Título -->
-            <h3 class="text-center mb-4">Login I</h3>
-            <div class="text-center">
-                <small>Neste só vamos retornar seu Token na tela, OK?</small>
-            </div>
-
-            <!-- Usuário -->
-            <div class="mb-3">
-                <label for="inputUser1" class="form-label">Usuário</label>
-                <input type="text" id="inputUser1" name="user" class="form-control" placeholder="Seu usuário?" required>
-            </div>
-
-            <!-- Senha -->
-            <div class="mb-3">
-                <label for="inputPassword1" class="form-label">Senha</label>
-                <input type="password" id="inputPassword1" name="password" class="form-control" placeholder="Sua senha?"
-                    required>
-                <div class="form-text text-danger" hidden="">A senha deve ter entre 8 e 20 caracteres.</div>
-            </div>
-
-            <!-- Botão de submit -->
-            <div class="d-grid">
-                <button type="submit" class="btn btn-success">Confirmar</button>
-            </div>
-        </form>
     </div>
 
     <hr>
@@ -66,7 +23,7 @@
     <div class="container border border-dark-subtle rounded p-4 bg-dark-subtle">
         <form id="login-form" action="/login" method="post">
             <!-- Título -->
-            <h3 class="text-center mb-4">Login II</h3>
+            <h3 class="text-center mb-4">Login</h3>
             <div class="text-center">
                 <small>Aqui, vamos te autenticar, e enviar para outra página, combinado?</small>
             </div>
@@ -96,10 +53,6 @@
 
     {{!-- Script de fetch, front > back-end --}}
     <script src="/javascripts/login.js"></script>
-    {{!-- Bootstrap, somente --}}
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
 
 </body>
 

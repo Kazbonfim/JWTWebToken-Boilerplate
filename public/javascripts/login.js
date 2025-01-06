@@ -16,23 +16,20 @@ form.addEventListener('submit', function (event) {
         },
         body: JSON.stringify({
             user: user,
-            password: password
-        })
+            password: password,
+        }),
+        credentials: 'include', // Garante que cookies sejam enviados e recebidos
     })
-        .then(response => response.json())
-        .then(data => {
-            if (data.auth) {
-                // Armazenando o token no localStorage
-                localStorage.setItem('token', data.token);
+        .then((response) => {
+            if (response.ok) {
                 alert('Login bem-sucedido!');
-
                 // Redirecionando para o dashboard
                 window.location.replace('/user');
             } else {
                 alert('Falha no login!');
             }
         })
-        .catch(error => {
+        .catch((error) => {
             console.error('Erro ao fazer login:', error);
             alert('Erro ao tentar fazer login');
         });
