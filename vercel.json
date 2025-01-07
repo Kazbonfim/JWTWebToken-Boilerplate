@@ -10,6 +10,11 @@
         {
             "src": "/(.*)",
             "dest": "api/server.js"
+        },
+        {
+            "src": "/[^.]+",
+            "dest": "/",
+            "status": 200
         }
     ]
 }
