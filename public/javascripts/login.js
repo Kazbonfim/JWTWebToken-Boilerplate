@@ -22,10 +22,16 @@ form.addEventListener('submit', function (event) {
         credentials: 'include', // Garante que cookies sejam enviados e recebidos
     })
         .then((response) => {
+
+            console.log('Resposta do servidor:', response.status); //DEBUG
+
             if (response.ok) {
                 alert('Login bem-sucedido!');
+
                 // Redirecionando para o dashboard
-                window.location.replace('/user');
+                console.log("Redirecionando para '/user'");
+                window.location.href = '/user';
+               
             } else {
                 alert('Falha no login!');
             }
