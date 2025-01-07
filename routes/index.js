@@ -47,4 +47,9 @@ router.post('/logout', (req, res, next) => {
   res.redirect('/')
 })
 
+router.get('/teste', (req, res, next) => {
+  // Rota de teste, nada demais
+  res.render('teste');
+});
+
 module.exports = router;
